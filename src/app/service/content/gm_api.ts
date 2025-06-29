@@ -430,6 +430,11 @@ export default class GMApi {
   }
 
   @GMContext.API()
+  CAT_getTabInfo(queryInfo: chrome.tabs.QueryInfo = {}) {
+    return this.sendMessage("CAT_getTabInfo", [queryInfo]);
+  }
+
+  @GMContext.API()
   CAT_userConfig() {
     return this.sendMessage("CAT_userConfig", []);
   }

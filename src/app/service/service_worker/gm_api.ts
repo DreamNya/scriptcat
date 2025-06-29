@@ -330,6 +330,11 @@ export default class GMApi {
   }
 
   @PermissionVerify.API()
+  CAT_getTabInfo(request: Request) {
+    return chrome.tabs.query(request.params[0] as chrome.tabs.QueryInfo);
+  }
+
+  @PermissionVerify.API()
   CAT_userConfig(request: Request) {
     chrome.tabs.create({
       url: `/src/options.html#/?userConfig=${request.uuid}`,

@@ -193,6 +193,12 @@ declare function CAT_clearProxy(): void;
 declare function CAT_click(x: number, y: number): void;
 
 /**
+ * 获取浏览器标签信息
+ * 非常危险的api
+ */
+declare function CAT_getTabInfo(queryInfo?: chrome.tabs.QueryInfo): Promise<chrome.tabs.Tab[]>;
+
+/**
  * 打开脚本的用户配置页面
  */
 declare function CAT_userConfig(): void;
